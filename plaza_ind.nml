@@ -94,6 +94,10 @@ item(FEAT_INDUSTRIES, pax_generator) {
 			tile_layout_fountain,
 			];
 	}
+	graphics {
+		monthly_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
+	}
 }
 }
 
@@ -114,6 +118,10 @@ item(FEAT_INDUSTRIES, pax_generator) {
 		layouts: [
 			tile_layout_statue,
 			];
+	}
+	graphics {
+		monthly_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
 	}
 }
 }
