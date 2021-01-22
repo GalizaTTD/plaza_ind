@@ -5,8 +5,7 @@ Are you tired of your eyecandy castles, villages, or airports not having any pas
 - Compatible with all industry sets
 - Uses the production rate and cost of FIRS hotels
 - Select its appearance as a base game fountain or statue in parameters
-- Nearby station named "<Town> Plaza"
 
-Coded by 2TallTyler
-
-License: GPL v3
+## Translations
+- English
+- German (WoelfiVW)
