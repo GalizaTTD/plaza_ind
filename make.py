@@ -12,7 +12,7 @@ header_stuff = ["plaza_ind"]
 unordered_stuff = []
 
 # Do you want to copy the completed NewGRF to your OpenTTD folder? (True/False)
-copy_bool = True
+copy_bool = False
 
 # What is the path of your OpenTTD folder?
 openttd_path = "C:/Users/tyler/Documents/OpenTTD/newgrf"
@@ -58,7 +58,7 @@ processed_nml_file.close()
 print("#### nmlc ####")
 
 # Run 
-nmlc = subprocess.run(["nmlc", "-c", "-t", "src\custom_tags.txt", "-l", "src\lang", "--grf", grf_name, merged_nml_path], stdout = subprocess.PIPE, stderr = subprocess.PIPE, text=True)
+nmlc = subprocess.run(["nmlc", "-c", "-t", "src/custom_tags.txt", "-l", "src/lang", "--grf", grf_name, merged_nml_path], stdout = subprocess.PIPE, stderr = subprocess.PIPE, text=True)
 print(nmlc.stdout)
 print(nmlc.stderr)
 
