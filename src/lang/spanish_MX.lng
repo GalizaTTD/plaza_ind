@@ -1,0 +1,16 @@
+##grflangid 0x55
+
+STR_GRF_NAME						:Plaza como Industria
+STR_GRF_DESC						:{ORANGE}Una plaza de una casilla que produce y acepta pasajeros.{}{}{BLACK}Útil para hacer zonas bonitas y funcionales.{}{}Código de 2TallTyler.{}{}Licencia: GPL v3
+STR_GENERATOR_NAME					:Plaza
+
+
+STR_TOWN                            :{STRING}
+STR_STATION                         :{STRING} {STRING}
+STR_NEARBY_STATION_NAME				:Plaza
+
+
+STR_PARAM_NAME_DESIGN				:Aspecto
+STR_PARAM_DESC_DESIGN				:Escoje como quieres que se vea la plaza.
+STR_PARAM_DESIGN_FOUNTAIN			:Fuente
+STR_PARAM_DESIGN_STATUE				:Estatua
