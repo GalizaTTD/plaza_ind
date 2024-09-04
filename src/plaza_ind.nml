@@ -22,17 +22,22 @@ grf {
 
 cargotable {
 	PASS,
+   MAIL,
    WSTE
 }
 
-spritelayout spr_layout_fountain {
-	ground {sprite: 1420 ;}
-	building {
-		sprite: 1455;
-		yoffset: 3;
-		xoffset: 3;
-		}
+template tmpl_building_animated() {
+   [ 84, 10, 64, 170, -31, -139, ANIM] // Stage 0
+   [158, 10, 64, 170, -31, -139, ANIM] // Stage 1
+   [232, 10, 64, 170, -31, -139, ANIM] // Stage 2
+   [306, 10, 64, 170, -31, -139, ANIM] // Stage 3 (Finished)
+   [ 10, 10, 64, 170, -31, -139, ANIM] // Ground
 }
+spriteset(ss_fountain, "src/gfx/fountain.png") { tmpl_building_animated() }
+spriteset(ss_fountain_snow, "src/gfx/fountain_snow.png") { tmpl_building_animated() }
+spritelayout sl_fountain { ground { sprite: ss_fountain(4) ;} building { sprite: ss_fountain(3); }}
+spritelayout sl_fountain_snow { ground { sprite: ss_fountain_snow(4) ;} building { sprite: ss_fountain_snow(3); }}
+switch(FEAT_INDUSTRYTILES, SELF, sw_fountain_snow_aware, terrain_type) { TILETYPE_SNOW: sl_fountain_snow; sl_fountain;}
 
 spritelayout spr_layout_statue {
 	ground {sprite: 1420 ;}
@@ -58,10 +63,10 @@ spritelayout spr_layout_statue {
 item(FEAT_INDUSTRYTILES, tile_fountain) {
 	property {
 		substitute:         			02;
-		accepted_cargos: 				[[PASS, 8]];
+		accepted_cargos: 				[[PASS, 8],[MAIL, 8]];
 	}
 	graphics {
-		default: 						spr_layout_fountain;
+		default: 						sw_fountain_snow_aware;
 		foundations: 					return CB_RESULT_FOUNDATIONS;
 	}
 }
@@ -85,6 +90,7 @@ if (graphic_switch==0) {
 			cargo_types:				[
 											accept_cargo("PASS"),
 											produce_cargo("PASS",17),
+											produce_cargo("MAIL",8),
 											produce_cargo("WSTE",4),
 										];
 			name:						string(STR_GENERATOR_NAME);
