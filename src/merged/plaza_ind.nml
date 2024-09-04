@@ -21,7 +21,8 @@ grf {
 
 
 cargotable {
-	PASS
+	PASS,
+   WSTE
 }
 
 spritelayout spr_layout_fountain {
@@ -84,6 +85,7 @@ if (graphic_switch==0) {
 			cargo_types:				[
 											accept_cargo("PASS"),
 											produce_cargo("PASS",17),
+											produce_cargo("WSTE",4),
 										];
 			name:						string(STR_GENERATOR_NAME);
 			nearby_station_name:		string(STR_STATION, string(STR_TOWN), string(STR_NEARBY_STATION_NAME));
